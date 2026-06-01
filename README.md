@@ -27,6 +27,7 @@ quality, or in *variance across seeds*.
 | Phase | Question | Headline result |
 |-------|----------|-----------------|
 | [01](results/phase01/cayley_vs_random_README.md) | Cayley-graph vs random sparse attention at equal budget on tiny Shakespeare — is the construction load-bearing, or only the expander property? | **Construction not load-bearing at this scale.** B (Cayley) 1.4744 ± 0.0033 ≈ C (random) 1.4756 ± 0.0023, both within ~0.013 nats of full causal (1.4620); predicted std(B)<std(C) signature absent. Window essential (no-window ablation +0.91 nats); long-range edges add only +0.005. Random graphs are *higher*-gap expanders (0.79 vs 0.59) here. |
+| [02](results/phase02/cayley_vs_random_n11_k2_README.md) | Decisive retest at large N, small budget (N=1320, k=2) — the regime where random graphs *should* become unreliable expanders and the variance signature should appear. | **Hypothesis fails again, in its predicted-best regime.** Premise now holds (random gap varies 2.2× across seeds; fixed Cayley is the *worst* expander, gap 0.075) yet std(B)=0.0054 ≥ std(C)=0.0037 and means tie (1.4766 vs 1.4770, both at the full ceiling). Causal chain breaks at link 2: with a window, loss is independent of long-range graph quality. Window-only (E, 1.4735) is the *best* sparse arm — at k=2 the long-range edges slightly *hurt*, reversing phase 01. Pure-Cayley (D) catastrophic (+1.0 nat). |
 
 ## Repo layout
 
