@@ -35,5 +35,177 @@
     "dtype": "torch.bfloat16",
     "note": "quality-sufficiency only; masked-dense/SDPA is slower not faster than flash full attn"
   },
-  "runs": {}
+  "runs": {
+    "T4096::A_full::w0::1337": {
+      "best_val_loss": 3.639202833175659,
+      "best_ppl": 38.06148327687181,
+      "best_iter": 20000,
+      "edges_total": 8390656,
+      "bs": 2,
+      "mode": "full_causal",
+      "diagnostics": {
+        "window_reach_frac": 1.0
+      },
+      "peak_gb": 9.67,
+      "params": 123570432,
+      "wall_s": 3315.4
+    },
+    "T4096::A_full::w0::1338": {
+      "best_val_loss": 3.6395020484924316,
+      "best_ppl": 38.07287355963588,
+      "best_iter": 20000,
+      "edges_total": 8390656,
+      "bs": 2,
+      "mode": "full_causal",
+      "diagnostics": {
+        "window_reach_frac": 1.0
+      },
+      "peak_gb": 9.67,
+      "params": 123570432,
+      "wall_s": 3315.3
+    },
+    "T4096::B_random::w64::1337": {
+      "best_val_loss": 3.7129013538360596,
+      "best_ppl": 40.972509992383294,
+      "best_iter": 20000,
+      "edges_total": 294219,
+      "bs": 2,
+      "mode": "random_w64",
+      "diagnostics": {
+        "window_reach_frac": 0.0156,
+        "window": 64,
+        "mode": "random_w64",
+        "lr_components": 1,
+        "lr_giant": 4096,
+        "lr_mean_deg": 15.958
+      },
+      "peak_gb": 9.7,
+      "params": 123570432,
+      "wall_s": 6736.4
+    },
+    "T4096::C_window::w64::1337": {
+      "best_val_loss": 3.716754198074341,
+      "best_ppl": 41.130675188712374,
+      "best_iter": 20000,
+      "edges_total": 264160,
+      "bs": 2,
+      "mode": "window_only_w64",
+      "diagnostics": {
+        "window_reach_frac": 0.0156,
+        "window": 64,
+        "mode": "window_only_w64"
+      },
+      "peak_gb": 9.7,
+      "params": 123570432,
+      "wall_s": 6736.3
+    },
+    "T4096::B_random::w64::1338": {
+      "best_val_loss": 3.727947950363159,
+      "best_ppl": 41.59366825870242,
+      "best_iter": 20000,
+      "edges_total": 294161,
+      "bs": 2,
+      "mode": "random_w64",
+      "diagnostics": {
+        "window_reach_frac": 0.0156,
+        "window": 64,
+        "mode": "random_w64",
+        "lr_components": 1,
+        "lr_giant": 4096,
+        "lr_mean_deg": 15.965
+      },
+      "peak_gb": 9.7,
+      "params": 123570432,
+      "wall_s": 6741.8
+    },
+    "T4096::C_window::w64::1338": {
+      "best_val_loss": 3.7306442260742188,
+      "best_ppl": 41.70596758309885,
+      "best_iter": 20000,
+      "edges_total": 264160,
+      "bs": 2,
+      "mode": "window_only_w64",
+      "diagnostics": {
+        "window_reach_frac": 0.0156,
+        "window": 64,
+        "mode": "window_only_w64"
+      },
+      "peak_gb": 9.7,
+      "params": 123570432,
+      "wall_s": 6737.7
+    },
+    "T4096::B_random::w128::1337": {
+      "best_val_loss": 3.6707653999328613,
+      "best_ppl": 39.28196076695915,
+      "best_iter": 20000,
+      "edges_total": 548262,
+      "bs": 2,
+      "mode": "random_w128",
+      "diagnostics": {
+        "window_reach_frac": 0.0312,
+        "window": 128,
+        "mode": "random_w128",
+        "lr_components": 1,
+        "lr_giant": 4096,
+        "lr_mean_deg": 15.958
+      },
+      "peak_gb": 9.7,
+      "params": 123570432,
+      "wall_s": 6739.7
+    },
+    "T4096::C_window::w128::1337": {
+      "best_val_loss": 3.6392662525177,
+      "best_ppl": 38.06389718764184,
+      "best_iter": 20000,
+      "edges_total": 520128,
+      "bs": 2,
+      "mode": "window_only_w128",
+      "diagnostics": {
+        "window_reach_frac": 0.0312,
+        "window": 128,
+        "mode": "window_only_w128"
+      },
+      "peak_gb": 9.7,
+      "params": 123570432,
+      "wall_s": 6737.5
+    }
+  },
+  "summary": {
+    "A_full::w0": {
+      "n": 2,
+      "mean_loss": 3.6393524408340454,
+      "std_loss": 0.00021157717952468804,
+      "mean_ppl": 38.067177992235465
+    },
+    "B_random::w64": {
+      "n": 2,
+      "mean_loss": 3.7204246520996094,
+      "std_loss": 0.01063955043809009,
+      "mean_ppl": 41.28192084132667,
+      "gap_to_full": 0.08107221126556396
+    },
+    "C_window::w64": {
+      "n": 2,
+      "mean_loss": 3.72369921207428,
+      "std_loss": 0.009821732989584702,
+      "mean_ppl": 41.41732253648715,
+      "gap_to_B": 0.00327455997467041,
+      "gap_to_full": 0.08434677124023438
+    },
+    "B_random::w128": {
+      "n": 1,
+      "mean_loss": 3.6707653999328613,
+      "std_loss": 0.0,
+      "mean_ppl": 39.28196076695915,
+      "gap_to_full": 0.03141295909881592
+    },
+    "C_window::w128": {
+      "n": 1,
+      "mean_loss": 3.6392662525177,
+      "std_loss": 0.0,
+      "mean_ppl": 38.06389718764184,
+      "gap_to_B": -0.03149914741516113,
+      "gap_to_full": -8.618831634521484e-05
+    }
+  }
 }
