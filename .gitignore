@@ -3,7 +3,7 @@ data/**/*.bin
 data/**/*.pkl
 
 # logs / scratch
-results/**/run.log
+results/**/*run.log
 *.pyc
 __pycache__/
 .venv/
